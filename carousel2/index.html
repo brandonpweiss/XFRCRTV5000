@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+
+	<link rel="stylesheet" href="style.css">
+	<script src="jquery.js"></script>
+	<script src="carousel.js"></script>
+	<script src="../jquery.instagram.js"></script>
+</head>
+<body>
+	<div class="image_carousel">
+
+    <div id="foo2" class="instagram">        
+    </div>
+
+    <div class="clearfix"></div>
+
+    <a class="prev" id="foo2_prev" href="#"><span>prev</span></a>
+
+    <a class="next" id="foo2_next" href="#"><span>next</span></a>
+
+    <div class="pagination" id="foo2_pag"></div>
+
+</div>
+<script>$('.instagram').instagram({
+  userId: 18664684,
+  accessToken: '18664684.40fdb3c.20f2b027bbb84b5b8f2c06e7b18acc7f'
+});
+</script>
+<script>
+	$("#foo").carouFredSel({
+	circular: false,
+	infinite: false,
+	auto 	: false,
+	prev	: {	
+		button	: "#foo2_prev",
+		key		: "left"
+	},
+	next	: { 
+		button	: "#foo2_next",
+		key		: "right"
+	},
+	pagination	: "#foo2_pag"
+});
+</script>
+</body>
+</html>
