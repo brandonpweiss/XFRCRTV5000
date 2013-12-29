@@ -235,16 +235,16 @@ FOR THE <span class="greyItalics">RE</span>BRANDING PARADIGM.</p>
 		<span class="prev">PREV</span> | 
         <span class="next">NEXT</span>
 		</div>
-		<div class="diagram">
-			<div class="item one">INBOUND MARKETING PLATFORM</div>
-			<div class="item two">CAMPAIGN OPERATIONS & REFINEMENT</div>
-			<div class="item three">INTRODUCTION & CONSULTATION</div>
-			<div class="item four">CONCEPTUALIZATION & STRATEGY</div>
-			<div class="item five">BRANDING & VISUAL DIRECTION</div>
-			<div class="item six">USER EXPERIENCE & DESIGN</div>
-			<div class="item seven">CREATIVE ASSET PRODUCTION</div>
-			<div class="item eight">DEVELOPMENT</div>
-		</div>
+		<ul class="diagram">
+			<li class="item one">INBOUND MARKETING PLATFORM</li>
+			<li class="item two">CAMPAIGN OPERATIONS & REFINEMENT</li>
+			<li class="item three largeFont">INTRODUCTION & CONSULTATION</li>
+			<li class="item four">CONCEPTUALIZATION & STRATEGY</li>
+			<li class="item five">BRANDING & VISUAL DIRECTION</li>
+			<li class="item six">USER EXPERIENCE & DESIGN</li>
+			<li class="item seven">CREATIVE ASSET PRODUCTION</li>
+			<li class="item eight">DEVELOPMENT</li>
+		</ul>
 
 <div class="description"><span class="black">PHASE 1: INTRODUCTION AND CONSULTATION</span> <br> This is the &quot;discovery&quot; phase of every project. Our favorite part of the entire process is getting to know you, discovering what your needs are, and finding out how we can help your business really <span class="black">BOOM</span>.  In this phase, not only will we get to know you, the client, but your audience/target market as well.  In the game of conversions, knowing the audience is priority.</div>
 	</div>
@@ -324,6 +324,7 @@ FOR THE <span class="greyItalics">RE</span>BRANDING PARADIGM.</p>
 
 <script type="text/javascript" src="http://jqueryrotate.googlecode.com/svn/trunk/jQueryRotate.js"></script>
 <script>
+$(document).ready(function(){
 var descriptions = [
     "<span class='black'>PHASE 1: INTRODUCTION AND CONSULTATION</span> <br> This is the &quot;discovery&quot; phase of every project. Our favorite part of the entire process is getting to know you, discovering what your needs are, and finding out how we can help your business really <span class='black'>BOOM</span>.  In this phase, not only will we get to know you, the client, but your audience/target market as well.  In the game of conversions, knowing the audience is priority.",
       
@@ -347,11 +348,39 @@ var i = 0;
 $(".next").rotate({bind:{
       click: function(){
       	  value -=45;
-          if (i == 7) {
-           i = 0;   
-          } else {
-          i++;
-          }
+					if (i == 0) {
+						$(".three").removeClass("largeFont"),
+						$(".four").addClass("largeFont"),
+						i++;
+					} else if (i == 1) {
+						$(".four").removeClass("largeFont"),
+						$(".five").addClass("largeFont"),
+						i++;
+					} else if (i == 2) {
+						$(".five").removeClass("largeFont"),
+						$(".six").addClass("largeFont"),
+						i++;
+					} else if (i == 3) {
+						$(".six").removeClass("largeFont"),
+						$(".seven").addClass("largeFont"),
+						i++;
+					} else if (i == 4) {
+						$(".seven").removeClass("largeFont"),
+						$(".eight").addClass("largeFont"),
+						i++;
+					} else if (i == 5) {
+						$(".eight").removeClass("largeFont"),
+						$(".one").addClass("largeFont"),
+						i++;
+					} else if (i == 6) {
+						$(".one").removeClass("largeFont"),
+						$(".two").addClass("largeFont"),
+						i++;
+					} else if (i == 7) {
+						$(".two").removeClass("largeFont"),
+						$(".three").addClass("largeFont"),
+						i = 0;
+					}
           $(".description").html(descriptions[i]);
           $(".diagram").rotate({
             duration:50,	
@@ -363,11 +392,39 @@ $(".next").rotate({bind:{
 $(".prev").rotate({bind:{
       click: function(){
       	  value +=45;
-          if (i == 0) {
-           i = 7;   
-          } else {
-          i--;
-          }
+					if (i == 0) {
+						$(".three").removeClass("largeFont"),
+						$(".two").addClass("largeFont"),
+           	i = 7;
+					} else if (i == 1) {
+						$(".four").removeClass("largeFont"),
+						$(".three").addClass("largeFont"),
+						i--;
+					} else if (i == 2) {
+						$(".five").removeClass("largeFont"),
+						$(".four").addClass("largeFont"),
+						i--;
+					} else if (i == 3) {
+						$(".six").removeClass("largeFont"),
+						$(".five").addClass("largeFont"),
+						i--;
+					} else if (i == 4) {
+						$(".seven").removeClass("largeFont"),
+						$(".six").addClass("largeFont"),
+						i--;
+					} else if (i == 5) {
+						$(".eight").removeClass("largeFont"),
+						$(".seven").addClass("largeFont"),
+						i--;
+					} else if (i == 6) {
+						$(".one").removeClass("largeFont"),
+						$(".eight").addClass("largeFont"),
+						i--;
+					} else if (i == 7) {
+						$(".two").removeClass("largeFont"),
+						$(".one").addClass("largeFont"),
+						i--;
+					}
           $(".description").html(descriptions[i]);
           $(".diagram").rotate({
             duration:50,	
@@ -375,6 +432,7 @@ $(".prev").rotate({bind:{
           })
       }
   }
+});
 });
 </script>
 <script type="text/javascript">
